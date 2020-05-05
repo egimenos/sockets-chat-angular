@@ -1,0 +1,14 @@
+<h2 class="mt-2 mb-2">Messages</h2>
+<hr />
+<form (ngSubmit)="send()">
+  <input
+    class="form-control"
+    type="text"
+    name="content"
+    id=""
+    [(ngModel)]="content"
+    placeholder="message"
+    autofocus
+    autocomplete="off"
+  />
+</form>
