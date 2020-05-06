@@ -9,7 +9,7 @@ export class ChatService {
 
   sendMessage(message: string) {
     const payload = {
-      from: 'ernesto',
+      from: this.webSocketService.getUser().name,
       content: message,
     };
 
@@ -18,5 +18,9 @@ export class ChatService {
 
   getMessages() {
     return this.webSocketService.listen('new-message');
+  }
+
+  getPrivateMessages() {
+    return this.webSocketService.listen('private-message');
   }
 }

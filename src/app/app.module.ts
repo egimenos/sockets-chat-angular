@@ -9,12 +9,25 @@ import { ChatComponent } from './components/chat/chat.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { LoginComponent } from './components/pages/login/login.component';
 import { MessagesComponent } from './components/pages/messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, ChatComponent, UsersListComponent, LoginComponent, MessagesComponent],
-  imports: [BrowserModule, FormsModule, SocketIoModule.forRoot(config)],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    ChatComponent,
+    UsersListComponent,
+    LoginComponent,
+    MessagesComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    SocketIoModule.forRoot(config),
+    AppRoutingModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
