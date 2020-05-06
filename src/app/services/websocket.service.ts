@@ -21,6 +21,10 @@ export class WebsocketService {
     });
   }
 
+  listen(event: string) {
+    return this.socket.fromEvent(event);
+  }
+
   emit(event: string, payload?: any, callback?: any) {
     console.log('emitting to server', event);
     this.socket.emit(event, payload, callback);

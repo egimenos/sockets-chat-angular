@@ -1,8 +1,16 @@
 <h2 class="mt-2 mb-2">Messages</h2>
 <hr />
+<div class="chat-messages" id="chat-messages">
+  <span class="list-group-item">
+    New Message!
+  </span>
+  <div *ngFor="let msg of messages">
+    <p class="message">{{ msg.from }}: {{ msg.content }}</p>
+  </div>
+</div>
 <form (ngSubmit)="send()">
   <input
-    class="form-control"
+    class="form-control chat-input"
     type="text"
     name="content"
     id=""

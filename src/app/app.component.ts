@@ -7,15 +7,8 @@ import { ChatService } from './services/chat.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'sockets-test';
 
-  constructor(
-    private wsService: WebsocketService,
-    private chatService: ChatService
-  ) {}
-
-  ngOnInit() {
-    this.chatService.sendMessage('test payload');
-  }
+  constructor() {}
 }
