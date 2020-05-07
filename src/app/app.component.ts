@@ -10,10 +10,7 @@ import { ChatService } from './services/chat.service';
 export class AppComponent implements OnInit {
   title = 'sockets-test';
 
-  constructor(
-    private webSokcetsService: WebsocketService,
-    private chatService: ChatService
-  ) {}
+  constructor(private chatService: ChatService) {}
 
   ngOnInit() {
     this.chatService.getPrivateMessages().subscribe((msg) => console.log(msg));
